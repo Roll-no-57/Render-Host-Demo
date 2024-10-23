@@ -17,6 +17,17 @@ app.get('/welcome', async (req, res) => {
     }
 });
 
+// Define a route to handle the WolframAlpha queries
+app.get('/hi', async (req, res) => {
+    
+    try {
+        res.json({"message": "Hi my name is apurbo"});
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
